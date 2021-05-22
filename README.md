@@ -1,7 +1,7 @@
 # Progressive Web App ReactJS Firebase project
 # Getting Started with Create React App
-To install dependencies
-`npm install`
+To install dependencies.\
+`npm install` .\
 `npm i firebase`
 `npm i @react-firebase/database`
 `npm i react-bootstrap bootstrap`
