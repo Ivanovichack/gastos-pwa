@@ -15,9 +15,8 @@ class Formm extends Component {
     this.state = {
       detalle: "",
       costo: 0,
-      categoria: ""
-    };
-    this.setCategoria = this.setCategoria.bind(this);
+      categoria: null
+    };    
     console.log(this.state);
   }
 
@@ -57,15 +56,15 @@ class Formm extends Component {
               const { value } = data;
               if (value === null || typeof value === "undefined") return null;
               const values = Object.values(value);
-              return <div className="form-row">
+              return <div className="row justify-content-center">
                 <div className="form-group col-md-6">
                   <label htmlFor="">Ingrese el tipo:</label>
                   <select
-                    onChange={this.setCategoria}
-                    value={categoria}
+                    onChange={this.setCategoria}                    
                     className="form-control"
+                    value={categoria}
                   >
-                    <option value={null}>Seleccione una categoría</option>
+                    <option value={categoria}>Seleccione una categoría</option>
                     {values.map((value) => {
                       return (
                         <option key={value} value={value}>
@@ -79,7 +78,7 @@ class Formm extends Component {
             }}
           </FirebaseDatabaseNode>
         </FirebaseDatabaseProvider>
-        <div className="form-row">
+        <div className="row justify-content-center">
           <div className="form-group col-md-6">
             <label htmlFor="">Ingrese el costo:</label>
             <input
@@ -92,7 +91,7 @@ class Formm extends Component {
             />
           </div>
         </div>
-        <div className="form-row">
+        <div className="row justify-content-center">
           <div className="form-group col-md-6">
             <label htmlFor="">Ingrese un detalle:</label>
             <input
@@ -108,7 +107,7 @@ class Formm extends Component {
         <NuevoGasto detail={detalle} cost={costo} categoria={categoria} clean={this.clean}/>
         
         <br />
-        <TablaGastos />
+        
       </div>
     );
     
